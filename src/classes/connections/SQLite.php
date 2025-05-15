@@ -2,12 +2,18 @@
 namespace App\Core\Classes\Connections;
 
 use App\Core\Classes\Connection;
-use App\Core\Interfaces\ConnectionInterface;
 
 class SQLite extends Connection {
     protected ?\PDO $pdo = null;
-    protected string $dsn = 'sqlite:' . __DIR__ . '/../../../database/database.sqlite';
-    protected array $attributes = [
-        \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION
-    ];
+    protected string $dsn = '';
+    protected array $attributes = [];
+
+    public function __construct()
+    {
+        $this->dsn = $_ENV['DB_HOST'] . __DIR__ . $_ENV['DB_PATH'] . $_ENV['DB_NAME'];
+        $this->attributes = [
+            \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION
+        ];
+    }
+ 
 }

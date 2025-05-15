@@ -1,0 +1,20 @@
+{
+    "name": "merterciyescagan/framework",
+    "description": "A simple framework with a query builder, database connection, migration and core classes.",
+    "type": "library",
+    "require": {
+        "laminas/laminas-diactoros": "^3.6"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Merterciyescagan\\Framework\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mert Erciyes Çağan"
+        }
+    ],
+    "minimum-stability": "stable"
+}
